@@ -8,7 +8,7 @@ ini. Pada tahun 2024 di Indonesia, Serangan jantung atau iskemik jantung
 menjadi penyakit terbanyak kedua yang menyebabkan kematian dengan jumlah 
 kasus mencapai 95,68 per 100.000 penduduk.
 
-![Deskripsi gambar](path/Jumlah Penyebab Kematian.png)
+![Deskripsi gambar](https://raw.githubusercontent.com/username/repo/main/path/Jumlah_Penyebab_Kematian.png)
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
