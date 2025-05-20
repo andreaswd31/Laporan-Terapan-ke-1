@@ -2,7 +2,11 @@
 
 ## Domain Proyek
 
-Pada bagian ini, kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
+Penyakit jantung merupakan salah satu penyebab kematian terbesar di 
+Indonesia dan berbagai jenis penyakit jantung dapat berkontribusi pada statistik 
+ini. Pada tahun 2024 di Indonesia, Serangan jantung atau iskemik jantung 
+menjadi penyakit terbanyak kedua yang menyebabkan kematian dengan jumlah 
+kasus mencapai 95,68 per 100.000 penduduk.
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
