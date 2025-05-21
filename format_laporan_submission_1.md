@@ -213,6 +213,7 @@ Berikut adalah hasil evaluasi untuk masing-masing model berdasarkan data uji:
     - Recall (class 1): 88%
     - F1-Score (class 1): 84%
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/Decision%20Tree%20-%20Confusion%20Matrix.png?raw=true)
+
 Model Decision Tree menunjukkan recall yang tinggi (88%), artinya model cukup baik dalam mendeteksi pasien yang benar-benar sakit, namun precision-nya relatif rendah (81%), yang berarti cukup banyak pasien sehat yang justru salah diklasifikasikan sebagai sakit (false positive sebanyak 13 kasus).
 
 2. Random Forest Classifier
@@ -221,6 +222,7 @@ Model Decision Tree menunjukkan recall yang tinggi (88%), artinya model cukup ba
     - Recall (positif): 91%
     - F1-Score (positif): 87%
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/Random%20Forest%20-%20Confusion%20Matrix.png?raw=true)
+
 Random Forest memiliki kinerja terbaik dibanding dua model lainnya. Dengan recall sebesar 91%, model ini sangat efektif mendeteksi pasien sakit dan hanya gagal mendeteksi 6 pasien sakit (FN). Precision-nya juga cukup tinggi (84%), menunjukkan bahwa sebagian besar prediksi "positif" memang benar-benar sakit. Hal ini penting agar pasien sakit tidak terlewat, mengingat konteksnya adalah penyakit jantung yang serius.
 
 3. Support Vector Machine (SVM)
@@ -229,10 +231,12 @@ Random Forest memiliki kinerja terbaik dibanding dua model lainnya. Dengan recal
     - Recall (positif): 89%
     - F1-Score (positif): 87%
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/SVM%20-%20Confusion%20Matrix.png?raw=true)
+
 SVM memiliki akurasinya setara dengan Random Forest. Precision-nya lebih tinggi sedikit (85%), artinya prediksi "sakit" oleh model ini lebih akurat, namun recall-nya sedikit lebih rendah dibanding Random Forest (89% vs 91%). Ini berarti model masih gagal mendeteksi 7 pasien sakit yang sebenarnya perlu perhatian.
 
 ### Kesimpulan Evaluasi
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/Perbandingan%20Akurasi%20Model.png?raw=true)
+
 Dari ketiga model yang dievaluasi:
 - Decision Tree cocok sebagai baseline model, namun memiliki trade-off antara precision dan recall.
 - SVM cukup seimbang dan presisi, tetapi recall-nya sedikit di bawah Random Forest.
