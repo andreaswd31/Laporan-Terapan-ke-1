@@ -52,7 +52,7 @@ Berangkat dari pernyataan masalah sebelumnya, berikut tujuan utama dari proyek i
 - Membangun dasar keputusan medis awal berbasis model klasifikasi dengan tingkat akurasi yang meyakinkan dengan mengarahkan hasil model sebagai pendukung diagnosis awal yang mudah dipahami dan dijustifikasi
 
 ### Solution statements
-- Membangun dan membandingkan beberapa algoritma klasifikasi seperti Logistic Regression, Decision Tree, Random Forest dan  mendukung probabilistic output melalui metode predict_proba().
+- Membangun dan membandingkan beberapa algoritma klasifikasi seperti Decision Tree, Random Forest dan Support Vector Machine mendukung probabilistic output melalui metode predict_proba().
 - melakukan evaluasi model menggunakan teknik cross-validation dan membandingkan metrik Accuracy, Precision, Recall, dan F1-Score untuk menentukan keseimbangan terbaik dalam performa.
 - Menampilkan confusion matrix untuk mengevaluasi jenis kesalahan yang dilakukan oleh tiap model (false positive / false negative
 
