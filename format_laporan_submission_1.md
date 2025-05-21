@@ -237,6 +237,23 @@ Random Forest memiliki kinerja terbaik dibanding dua model lainnya. Dengan recal
 
 SVM memiliki akurasinya setara dengan Random Forest. Precision-nya lebih tinggi sedikit (85%), artinya prediksi "sakit" oleh model ini lebih akurat, namun recall-nya sedikit lebih rendah dibanding Random Forest (89% vs 91%). Ini berarti model masih gagal mendeteksi 7 pasien sakit yang sebenarnya perlu perhatian.
 
+### Model Case Testing
+Untuk menguji keandalan model dalam situasi nyata, dua kasus pasien diuji menggunakan model yang telah diekspor:
+- Case 1 (Prediksi Negatif)
+Ketiga model secara konsisten memprediksi pasien tidak mengidap penyakit jantung (label 0).
+Decision Tree menunjukkan keyakinan penuh (100%),
+    - Decision Tree menunjukkan keyakinan penuh (100%),
+    - SVM dan Random Forest menunjukkan probabilitas tinggi (90%).
+    
+Hal ini menandakan bahwa data pasien berada dalam wilayah yang aman secara klinis, dan model mampu mengenali itu dengan baik.
+    
+- Case 2 (Prediksi Positif)
+Semua model memprediksi pasien berisiko tinggi mengidap penyakit jantung (label 1).
+    - Decision Tree dan SVM menunjukkan keyakinan 100%,
+    - Random Forest memberikan 85% probabilitas.
+    
+Prediksi ini didukung oleh fitur-fitur kritis seperti tekanan darah tinggi, kolesterol tinggi, dan nyeri dada saat aktivitas fisik.
+
 ### Kesimpulan Evaluasi
 
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/Perbandingan%20Akurasi%20Model.png?raw=true)
@@ -269,8 +286,3 @@ Sugianto, M. A., Agung, A., Widyawati, I. A., Penelitian, B., Kabupaten, P., &
 Indonesia, B. (2020). MANFAAT PROGRAM KRAMA BADUNG SEHAT 
 DALAM MENINGKATKAN KESEJAHTERAAN MASYARAKAT. Bali 
 Health Published Journal, 2(1). 
-
-**---Ini adalah bagian akhir laporan---**
-
-
-
