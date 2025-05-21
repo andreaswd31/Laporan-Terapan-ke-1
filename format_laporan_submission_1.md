@@ -278,8 +278,7 @@ Budhiadnya, A. K., & Kurniawidjaja, M. (2022). HUBUNGAN ANTARA KARAKTERISTIK PEK
 
 Islamuddin, J., & Widasari, E. R. (2024). Fakultas Ilmu Komputer Sistem 
 Monitoring Kesehatan Jantung Menggunakan Metode Adaptive Threshold 
-Berbasis Shimmer Electrocardiogram Dan Matlab (Vol. 1, Issue 1). http://j
-ptiik.ub.ac.id 
+Berbasis Shimmer Electrocardiogram Dan Matlab (Vol. 1, Issue 1). http://jptiik.ub.ac.id 
 
 Suciana, Hengky, H. K., & Usma. (2021). ANALISIS FAKTOR RISIKO PENYAKIT 
 JANTUNG KORENER PADA PENDERITA DIABETES MELITUS TIPE 2 DI 
