@@ -75,7 +75,9 @@ Sejumlah variabel atau fitur yang merepresentasikan kondisi klinis pasien. Penje
 - ST_Slope: Kemiringan segmen ST selama latihan (Up: naik, Flat: datar, Down: turun).
 - HeartDisease: Label atau kelas keluaran (1: menderita penyakit jantung, 0: normal).
 
-Tidak terdapat data duplikat maupun missing value pada dataset ini (Jumlah duplikasi: 0). Namun, terdapat nilai tidak logis pada fitur RestingBP dan Cholesterol, yaitu adanya nilai nol (0) yang secara medis tidak memungkinkan karena tekanan darah dan kadar kolesterol tidak bisa bernilai nol.
+Tidak terdapat data duplikat maupun missing value pada dataset ini (Jumlah duplikasi: 0). Namun, terdapat nilai tidak logis pada fitur RestingBP dan Cholesterol, yaitu adanya nilai nol (0) yang secara medis tidak memungkinkan karena tekanan darah dan kadar kolesterol tidak bisa bernilai nol, serta terdapat outliers di beberapa fitur.
+
+![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/Deteksi%20Outliers.png?raw=true)
 
 ### Exploratory Data Analysis (EDA)
 Untuk memahami pola data, distribusi, serta hubungan antar variabel numerik, dilakukan dua teknik visualisasi utama:
@@ -94,6 +96,8 @@ Pada tahap awal praproses, dilakukan pembersihan data dengan menghapus nilai-nil
 2. Menghapus Outlier pada Beberapa Fitur Numerik
 Outlier atau nilai pencilan merupakan nilai ekstrem yang secara signifikan berbeda dari sebagian besar data lainnya. Jika tidak ditangani, outlier dapat mempengaruhi distribusi data dan performa model prediktif. Oleh karena itu, dilakukan proses deteksi dan penghapusan outlier pada fitur numerik RestingBP, Cholesterol, MaxHR, dan Oldpeak menggunakan metode Interquartile Range (IQR). IQR adalah teknik statistik yang mengidentifikasi outlier berdasarkan rentang antara kuartil pertama (Q1) dan kuartil ketiga (Q3), dengan batas bawah Q1 - 1.5×IQR dan batas atas Q3 + 1.5×IQR.
 Baris data yang mengandung nilai di luar rentang tersebut dihapus dari dataset. Langkah ini dilakukan untuk memastikan distribusi data yang lebih normal dan meningkatkan akurasi model machine learning di tahap selanjutnya.
+
+![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/Penanganan%20Outliers.png?raw=true)
 
 3. Identifikasi Fitur Kategorikal dan Numerik
 mengidentifikasi tipe data dari setiap fitur, yang dibedakan menjadi dua jenis utama: fitur kategorikal dan numerik. Fitur kategorikal terdiri dari Sex, ChestPainType, RestingECG, ExerciseAngina, dan ST_Slope, sedangkan fitur numerik mencakup Age, RestingBP, Cholesterol, FastingBS, MaxHR, dan Oldpeak. Identifikasi ini diperlukan untuk menerapkan teknik praproses yang sesuai, karena fitur kategorikal membutuhkan encoding, sementara fitur numerik perlu distandarisasi.
