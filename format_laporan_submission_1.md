@@ -75,6 +75,7 @@ Sejumlah variabel atau fitur yang merepresentasikan kondisi klinis pasien. Penje
 - ST_Slope: Kemiringan segmen ST selama latihan (Up: naik, Flat: datar, Down: turun).
 - HeartDisease: Label atau kelas keluaran (1: menderita penyakit jantung, 0: normal).
 
+Tidak terdapat data duplikat maupun missing value pada dataset ini (Jumlah duplikasi: 0). Namun, terdapat nilai tidak logis pada fitur RestingBP dan Cholesterol, yaitu adanya nilai nol (0) yang secara medis tidak memungkinkan karena tekanan darah dan kadar kolesterol tidak bisa bernilai nol.
 
 ### Exploratory Data Analysis (EDA)
 Untuk memahami pola data, distribusi, serta hubungan antar variabel numerik, dilakukan dua teknik visualisasi utama:
@@ -175,7 +176,7 @@ Algoritma SVM digunakan dengan kernel Radial Basis Function (RBF) yang cocok unt
     - Parameter tuning yang sensitif dan memerlukan proses optimasi yang cermat.
     - Sulit diinterpretasikan secara intuitif.
     
-Setelah ketiga model diuji menggunakan dataset yang sama, dilakukan evaluasi menggunakan metrik akurasi, precision, recall, dan F1-score untuk membandingkan performa masing-masing algoritma.
+Setelah ketiga model diuji menggunakan dataset yang sama, dilakukan evaluasi menggunakan metrik akurasi, precision, recall, dan F1-score untuk membandingkan performa masing-masing algoritma. Berdasarkan ketiga model yang telah dilatih dan diuji, proses seleksi model akan dilakukan pada bagian evaluasi. Namun, dari hasil awal pelatihan, Random Forest menunjukkan potensi sebagai kandidat terbaik karena kombinasi performa yang stabil dan kemampuan menangani overfitting.
 
 ## Evaluation
 Evaluasi model dilakukan dengan menggunakan beberapa metrik performa yang umum dalam permasalahan klasifikasi, yaitu akurasi, precision, recall, dan F1-score. Pemilihan metrik ini didasarkan pada kebutuhan untuk tidak hanya mengukur jumlah prediksi yang benar secara keseluruhan, tetapi juga memperhatikan performa model dalam mengenali masing-masing kelas (positif dan negatif), yang dalam konteks ini adalah adanya indikasi penyakit jantung atau tidak.
