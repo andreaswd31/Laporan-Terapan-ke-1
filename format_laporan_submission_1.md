@@ -83,7 +83,7 @@ Untuk memahami pola data, distribusi, serta hubungan antar variabel numerik, dil
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/Distribusi%20Variabel%20Numerikal.png?raw=true)
 Distribusi dari masing-masing fitur numerik pada dataset. Usia (Age) dan detak jantung maksimum (MaxHR) menunjukkan distribusi mendekati normal, sedangkan tekanan darah (RestingBP) dan kolesterol (Cholesterol) memiliki beberapa outlier yang signifikan. Nilai Oldpeak cenderung right-skewed dan FastingBS serta HeartDisease merupakan variabel biner dengan distribusi yang tidak seimbang. Sebagian besar pasien memiliki gula darah puasa normal (FastingBS = 0), dan lebih dari setengahnya mengidap penyakit jantung (HeartDisease = 1). Visualisasi ini memberikan gambaran awal tentang karakteristik data dan potensi outlier yang perlu diperhatikan dalam analisis lebih lanjut.
 
-2. Korelasi Antar Variabel Numerikal
+3. Korelasi Antar Variabel Numerikal
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/HeatmapFitur.png?raw=true)
 Hubungan linear antar variabel numerik. Ditemukan bahwa Oldpeak dan MaxHR memiliki korelasi paling kuat dengan penyakit jantung (HeartDisease), masing-masing positif (0.40) dan negatif (-0.40), yang berarti semakin tinggi depresi ST cenderung meningkatkan risiko, sementara detak jantung maksimum yang lebih tinggi justru menurunkan risiko. Usia (Age) dan FastingBS juga memiliki korelasi positif terhadap HeartDisease, sedangkan variabel lainnya seperti kolesterol dan tekanan darah menunjukkan korelasi lemah. Visualisasi ini membantu mengidentifikasi fitur-fitur yang paling relevan untuk membangun model prediksi penyakit jantung.
 
@@ -212,6 +212,7 @@ Berikut adalah hasil evaluasi untuk masing-masing model berdasarkan data uji:
     - Precision (class 1): 81%
     - Recall (class 1): 88%
     - F1-Score (class 1): 84%
+      
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/Decision%20Tree%20-%20Confusion%20Matrix.png?raw=true)
 
 Model Decision Tree menunjukkan recall yang tinggi (88%), artinya model cukup baik dalam mendeteksi pasien yang benar-benar sakit, namun precision-nya relatif rendah (81%), yang berarti cukup banyak pasien sehat yang justru salah diklasifikasikan sebagai sakit (false positive sebanyak 13 kasus).
@@ -221,6 +222,7 @@ Model Decision Tree menunjukkan recall yang tinggi (88%), artinya model cukup ba
     - Precision (positif): 84%
     - Recall (positif): 91%
     - F1-Score (positif): 87%
+      
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/Random%20Forest%20-%20Confusion%20Matrix.png?raw=true)
 
 Random Forest memiliki kinerja terbaik dibanding dua model lainnya. Dengan recall sebesar 91%, model ini sangat efektif mendeteksi pasien sakit dan hanya gagal mendeteksi 6 pasien sakit (FN). Precision-nya juga cukup tinggi (84%), menunjukkan bahwa sebagian besar prediksi "positif" memang benar-benar sakit. Hal ini penting agar pasien sakit tidak terlewat, mengingat konteksnya adalah penyakit jantung yang serius.
@@ -230,11 +232,13 @@ Random Forest memiliki kinerja terbaik dibanding dua model lainnya. Dengan recal
     - Precision (positif): 85%
     - Recall (positif): 89%
     - F1-Score (positif): 87%
+      
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/SVM%20-%20Confusion%20Matrix.png?raw=true)
 
 SVM memiliki akurasinya setara dengan Random Forest. Precision-nya lebih tinggi sedikit (85%), artinya prediksi "sakit" oleh model ini lebih akurat, namun recall-nya sedikit lebih rendah dibanding Random Forest (89% vs 91%). Ini berarti model masih gagal mendeteksi 7 pasien sakit yang sebenarnya perlu perhatian.
 
 ### Kesimpulan Evaluasi
+
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/Perbandingan%20Akurasi%20Model.png?raw=true)
 
 Dari ketiga model yang dievaluasi:
