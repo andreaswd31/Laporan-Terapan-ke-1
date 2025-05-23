@@ -99,10 +99,6 @@ Baris data yang mengandung nilai di luar rentang tersebut dihapus dari dataset. 
 
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/Penanganan%20Outliers.png?raw=true)
 
-3. Identifikasi Fitur Kategorikal dan Numerik
-mengidentifikasi tipe data dari setiap fitur, yang dibedakan menjadi dua jenis utama: fitur kategorikal dan numerik. Fitur kategorikal terdiri dari Sex, ChestPainType, RestingECG, ExerciseAngina, dan ST_Slope, sedangkan fitur numerik mencakup Age, RestingBP, Cholesterol, FastingBS, MaxHR, dan Oldpeak. Identifikasi ini diperlukan untuk menerapkan teknik praproses yang sesuai, karena fitur kategorikal membutuhkan encoding, sementara fitur numerik perlu distandarisasi.
-    - Fitur Kategorikal (cat_cols): Sex, ChestPainType, RestingECG, ExerciseAngina, ST_Slope
-    - Fitur Numerik (num_cols): Age, RestingBP, Cholesterol, FastingBS, MaxHR, Oldpeak
 
 4. Memisahkan Fitur dan Label
 Dataset kemudian dipisahkan antara fitur independen (X) dan target/label (y) yang akan diprediksi.
@@ -111,14 +107,10 @@ Dataset kemudian dipisahkan antara fitur independen (X) dan target/label (y) yan
     y = heart_df['HeartDisease']
     ```
     
-5. Identifikasi Fitur Kategorikal & Numerik
-Sebelum dilakukan preprocessing, penting untuk mengelompokkan fitur berdasarkan jenis datanya, karena teknik transformasi yang digunakan berbeda untuk fitur kategorikal dan numerik.
-    ```python
-    # Kolom kategorikal dan numerik
-    cat_cols = ['Sex', 'ChestPainType', 'RestingECG', 'ExerciseAngina', 'ST_Slope']
-    num_cols = ['Age', 'RestingBP', 'Cholesterol', 'FastingBS', 'MaxHR', 'Oldpeak']
-     ```
-     Fitur kategorikal (cat_cols) adalah fitur yang merepresentasikan kategori atau kelas, biasanya berupa string atau integer diskrit. Sedangkan, Fitur numerik (num_cols) adalah fitur dengan nilai kontinu atau diskrit yang bisa diukur secara kuantitatif. 
+3. Identifikasi Fitur Kategorikal dan Numerik
+mengidentifikasi tipe data dari setiap fitur, yang dibedakan menjadi dua jenis utama: fitur kategorikal dan numerik. Fitur kategorikal terdiri dari Sex, ChestPainType, RestingECG, ExerciseAngina, dan ST_Slope, sedangkan fitur numerik mencakup Age, RestingBP, Cholesterol, FastingBS, MaxHR, dan Oldpeak. Identifikasi ini diperlukan untuk menerapkan teknik praproses yang sesuai, karena fitur kategorikal membutuhkan encoding, sementara fitur numerik perlu distandarisasi.
+    - Fitur Kategorikal (cat_cols): Sex, ChestPainType, RestingECG, ExerciseAngina, ST_Slope
+    - Fitur Numerik (num_cols): Age, RestingBP, Cholesterol, FastingBS, MaxHR, Oldpeak
      
 6. Preprocessing: Encoding dan Scaling
 Proses preprocessing terdiri dari dua tahap utama:
