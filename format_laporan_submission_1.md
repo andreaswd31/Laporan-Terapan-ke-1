@@ -110,7 +110,17 @@ Dataset kemudian dipisahkan antara fitur independen (X) dan target/label (y) yan
     X = heart_df.drop('HeartDisease', axis=1)
     y = heart_df['HeartDisease']
     ```
-3. Preprocessing: Encoding dan Scaling
+    
+5. Identifikasi Fitur Kategorikal & Numerik
+Sebelum dilakukan preprocessing, penting untuk mengelompokkan fitur berdasarkan jenis datanya, karena teknik transformasi yang digunakan berbeda untuk fitur kategorikal dan numerik.
+    ```python
+    # Kolom kategorikal dan numerik
+    cat_cols = ['Sex', 'ChestPainType', 'RestingECG', 'ExerciseAngina', 'ST_Slope']
+    num_cols = ['Age', 'RestingBP', 'Cholesterol', 'FastingBS', 'MaxHR', 'Oldpeak']
+     ```
+     Fitur kategorikal (cat_cols) adalah fitur yang merepresentasikan kategori atau kelas, biasanya berupa string atau integer diskrit. Sedangkan, Fitur numerik (num_cols) adalah fitur dengan nilai kontinu atau diskrit yang bisa diukur secara kuantitatif. 
+     
+6. Preprocessing: Encoding dan Scaling
 Proses preprocessing terdiri dari dua tahap utama:
     - Encoding fitur kategorikal menggunakan OneHotEncoder (dengan parameter drop='first' untuk menghindari dummy variable trap).
     - Scaling fitur numerik menggunakan StandardScaler agar setiap fitur memiliki distribusi dengan rata-rata 0 dan standar deviasi 1 yang sangat penting untuk algoritma berbasis jarak seperti SVM.
@@ -121,7 +131,7 @@ Pipeline preprocessing dibuat menggunakan ColumnTransformer:
     ('num', StandardScaler(), num_cols)
     ])
     ```
-4. Pembagian Data: Train-Test Split
+7. Pembagian Data: Train-Test Split
 Dataset dibagi menjadi data latih dan data uji dengan proporsi 80:20, menggunakan metode stratified split untuk memastikan proporsi label seimbang di kedua subset.
      ```python
     X_train, X_test, y_train, y_test = train_test_split(
@@ -262,13 +272,18 @@ Prediksi ini didukung oleh fitur-fitur kritis seperti tekanan darah tinggi, kole
 
 ![alt text](https://github.com/andreaswd31/Laporan-Terapan-ke-1/blob/main/Perbandingan%20Akurasi%20Model.png?raw=true)
 
-Dari ketiga model yang dievaluasi:
-- Decision Tree cocok sebagai baseline model, namun memiliki trade-off antara precision dan recall.
-- SVM cukup seimbang dan presisi, tetapi recall-nya sedikit di bawah Random Forest.
-- Random Forest memberikan hasil terbaik secara menyeluruh, dengan recall tertinggi, f1-score tinggi, dan hanya 6 sakit yang tidak terdeteksi.
+Berdasarkan hasil evaluasi terhadap tiga model klasifikasi, yaitu Decision Tree, Random Forest, dan Support Vector Machine (SVM), serta pengujian pada studi kasus representatif, diperoleh sejumlah temuan yang merefleksikan keterkaitan langsung antara performa model dengan problem statements serta sejauh mana capaian terhadap tujuan yang telah ditetapkan dalam Business Understanding.
 
-Mengingat prioritas utama dalam kasus penyakit jantung adalah menghindari false negative (FN), maka Random Forest dipilih sebagai model terbaik karena memiliki kemampuan paling optimal dalam mendeteksi pasien yang benar-benar sakit, sekaligus menjaga keseimbangan precision.
+1. Model-model yang diuji mampu menghasilkan probabilitas prediksi dengan tingkat keyakinan yang tinggi. Contohnya, pada case testing, Decision Tree dan SVM mampu memberikan keyakinan 100% baik untuk kasus positif maupun negatif, dan Random Forest menunjukkan probabilitas tinggi (>85%) untuk kedua kasus.  Ini menunjukkan bahwa meskipun data yang digunakan terbatas, model dapat memberikan probabilistic output yang bermakna dan dapat diinterpretasikan secara klinis.
+2. Random Forest menunjukkan performa terbaik secara keseluruhan dengan:
+    - Akurasi: 87.77%
+    - Precision: 84%
+    - Recall: 91%
+    - F1-score: 87%
+    
+    Model ini memiliki recall tertinggi, artinya sangat baik dalam mengidentifikasi pasien yang benar-benar sakit, dan tetap menjaga precision yang layak.
 
+3. Random Forest dan SVM terbukti mampu mengenali pasien dengan indikasi penyakit jantung secara akurat, dengan kesalahan minimum (False Negative (FN) hanya sebanyak 6 dan 7 pasien pada masing-masing model). False Negative (FN) terjadi ketika model memprediksi bahwa pasien tidak mengidap penyakit jantung, padahal sebenarnya pasien tersebut positif. Ini sangat berbahaya dalam konteks medis karena pasien yang sebenarnya membutuhkan penanganan bisa saja tidak ditindaklanjuti. Oleh karena itu, semakin kecil nilai FN, semakin tinggi tingkat keandalan model dalam mendeteksi pasien yang benar-benar sakit, terutama untuk digunakan dalam tahap awal diagnosis atau early screening. Model dengan FN rendah mengurangi risiko missed diagnosis, yang sangat penting dalam kasus penyakit serius seperti jantung.
 
 ## Daftar Pustaka
 
